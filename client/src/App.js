@@ -12,7 +12,6 @@ import {
   Outlet,
 } from "react-router-dom";
 import "./style.scss"
-import cors from 'cors'
 
 const Layout = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import Foto2 from "../image/4.jpeg"
+import Foto5 from "../image/5.jpg"
 
 
 const Home = () => {
@@ -34,7 +34,7 @@ const Home = () => {
         {posts.map((post) => (
           <div className="post" key={post.id}>
             <div className="img">
-              <img src={Foto2} alt="post-photo" />
+              <img src={Foto5} alt="post-photo" />
             </div>
               <div className="content">
                 <Link to={`/post/${post.id}`}>
