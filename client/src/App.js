@@ -5,21 +5,20 @@ import Home from './Pages/Home';
 import Single from './Pages/Single';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
-
 import {
   createBrowserRouter,
   RouterProvider,
   Route,
   Outlet,
 } from "react-router-dom";
-import { Children } from 'react';
+import "./style.scss"
 
-const Layout = () =>{
-  return(
+const Layout = () => {
+  return (
     <>
-      <Navbar/>
-      <Outlet/>
-      <Footer/>
+      <Navbar />
+      <Outlet />
+      <Footer />
     </>
   )
 }
@@ -27,29 +26,29 @@ const Layout = () =>{
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout/>,
-    children:[
+    element: <Layout />,
+    children: [
       {
         path: "/",
-        element: <Home/>
+        element: <Home />
       },
       {
-        path: "/single",
-        element: <Single/>
+        path: "/post/:id",
+        element: <Single />
       },
       {
         path: "/write",
-        element: <Write/>
+        element: <Write />
       },
     ]
   },
   {
     path: "/register",
-    element:<Register/>,
+    element: <Register />,
   },
   {
     path: "/login",
-    element: <Login/>,
+    element: <Login />,
   },
 ]);
 
@@ -57,8 +56,10 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className="App">
-      <RouterProvider router={router} />
+    <div className="app">
+      <div className="container">
+        <RouterProvider router={router} />
+      </div>
     </div>
   );
 }
