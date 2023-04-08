@@ -1,5 +1,5 @@
 import React, {useState, useEffect}from 'react';
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 import axios from 'axios';
 import Foto5 from "../image/5.jpg"
 
@@ -7,17 +7,19 @@ import Foto5 from "../image/5.jpg"
 const Home = () => {
  const [posts,setPosts] = useState([])
 
+ const cat = useLocation().search
+
  useEffect(()=>{
   const fetchData = async ()=>{
     try {
-      const res = await axios.get("http://localhost:8000/api/posts")
+      const res = await axios.get(`http://localhost:8000/api/posts${cat}`)
       setPosts(res.data)
     } catch (error) {
       console.log(error)
     }
   };
   fetchData()
- })
+ },[cat])
   /* const posts = [
     {
       id: 1,
