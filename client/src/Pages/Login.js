@@ -12,9 +12,8 @@ const Login = () => {
 
   const navigate = useNavigate()
 
-  const {currentUser} = useContext(AuthContext)
+  const {login} = useContext(AuthContext)
 
- console.log(currentUser)
 
   const handleChange = (e) => {
     setInputs((prev) =>({...prev, [e.target.name]: e.target.value}))
@@ -23,7 +22,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios.post("http://localhost:8000/api/auth/login", inputs)
+      await login(inputs)
       navigate("/")
     } catch (error) {
       setError(error.response.data)

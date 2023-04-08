@@ -46,10 +46,9 @@ db.query(q, [req.body.username], (err,data)=>{
     }).status(200).json(other)
 })
 
-
-
-
 }
+
+
 export const logout = (req,res)=>{
 
 }
