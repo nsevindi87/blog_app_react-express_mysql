@@ -8,6 +8,8 @@ const Register = () => {
     email:"",
     password:""
   })
+  const [error, setError] = useState(null)
+
 
   const handleChange = (e) => {
     setInputs((prev) =>({...prev, [e.target.name]: e.target.value}))
@@ -20,8 +22,7 @@ const Register = () => {
       console.log(res)
       console.log("OLUSTURULDU")
     } catch (error) {
-      console.log(error)
-      console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+      setError(error.response.data)
     }
   }
 
@@ -34,7 +35,7 @@ const Register = () => {
         <input required type="email" placeholder='email' name="email" onChange={handleChange}/>
         <input required type="password" placeholder='password' name="password" onChange={handleChange}/>
         <button onClick={handleSubmit}>Register</button>
-        <p>This is an Error!</p>
+        {error && <p>{error}</p>}
         <span>Do you have an account? <Link to="/login">Login</Link></span>
       </form>
     </div>
