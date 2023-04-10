@@ -4,6 +4,9 @@ https://github.com/safak/youtube2022/tree/blog-app/client/src
 Youtube Link
 https://www.youtube.com/watch?v=0aPLk2e2Z3g&t=15s
 
+videonun 1.55.00 civarinda kaldim.
+Sorun su ki cookie kabul etmiyor ve ilerleyen asamada postlar bu cookieye göre siliniyor. Devamini getiremedim.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
